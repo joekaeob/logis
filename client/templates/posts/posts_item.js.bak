@@ -1,0 +1,33 @@
+Template.postsItem.helpers({
+
+  color: function(rfid) {
+	Session.setDefault('_color_'+rfid, "#CEF6F5");
+	return Session.get('_color_'+rfid);
+  },
+
+  diff_time: function(ref, rfid) {
+	if(Rfids.find({rfid:rfid, status:true}).count() > 0){
+		/*var cur = new Date();
+		var diff = (ref.getTime() - cur.getTime())/1000;
+		console.log(diff);
+		if(diff < 8){
+			setTimeout(function(){ 
+				//Rfids.update(Rfids.findOne({rfid:rfid})._id, {$set: {status:false}});
+				Session.set('_color_'+rfid, '#F1F8E0');
+				setTimeout(function(){delete Session.keys['_color_'+rfid]}, 1000);
+			}, 8000);	
+		}else{
+			Session.set('_color_'+rfid, '#F5F6CE');
+		}*/
+
+		setTimeout(function(){ 
+				//Rfids.update(Rfids.findOne({rfid:rfid})._id, {$set: {status:false}});
+				Session.set('_color_'+rfid, '#F1F8E0');
+				setTimeout(function(){delete Session.keys['_color_'+rfid]}, 1000);
+			}, 8000);	
+	 }else{
+		Session.set('_color_'+rfid, '#E6E6E6');
+	 }
+  }
+
+});

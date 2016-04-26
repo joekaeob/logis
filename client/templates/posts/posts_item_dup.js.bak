@@ -1,0 +1,11 @@
+Template.postsItemDup.helpers({
+	
+	display : function(ref, rfid){
+		var cur = new Date();
+		var diff = (cur.getTime() - ref.getTime())/1000;
+		if(diff < 8){
+			Rfids.remove(Rfids.findOne({rfid:rfid})._id);
+		}
+	}
+
+});

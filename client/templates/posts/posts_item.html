@@ -1,0 +1,13 @@
+<template name="postsItem">
+  <div class="post" style="background-color:{{color rfid}}">
+    <div class="post-content">
+	  {{diff_time timestamp rfid}}
+	  <div class="row">
+		<div class="col-md-1"><b>RFID:</b></div><div class="col-md-11"><a href=""><b>{{rfid}}</b></a><br/></div>
+	  </div>
+	  <div class="row">
+		<div class="col-md-1"><b>TIME:</b></div><div class="col-md-11">{{timestamp}}</div>
+	  </div>
+    </div>
+  </div>
+</template>
